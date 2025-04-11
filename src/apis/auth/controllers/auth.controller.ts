@@ -7,10 +7,15 @@ import { UserLoginDto } from '../dto/user-login.dto';
 import { UserPayload } from 'src/base/models/user-payload.model';
 import { UserRegisterDto } from '../dto/user-register.dto';
 import { Me } from 'src/decorators/me.decorator';
+import { OTPService } from '../twilio.service';
+import { PhoneLoginDto } from '../dto/phone-login.dto';
 
 @Controller('auth')
 export class AuthController {
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private otpService: OTPService,
+  ) {}
 
   @Post('signin')
   login(@Body() userLogin: UserLoginDto) {
@@ -20,6 +25,13 @@ export class AuthController {
   @Post('signup')
   register(@Body() userRegister: UserRegisterDto) {
     return this.authService.register(userRegister);
+  }
+
+  @Post('send-otp')
+  async sendOtp(@Body() body: PhoneLoginDto) {
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+    await this.otpService.sendOTP(body.phone, otp);
+    return { message: 'OTP sent successfully' };
   }
 
   @ApiBearerAuth()

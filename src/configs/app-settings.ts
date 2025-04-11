@@ -29,6 +29,11 @@ export const appSettings = {
     region: process.env.AWS_REGION,
     distribution: process.env.DISTRIBUTION_URL,
   },
+  twilio: {
+    accountSID: process.env.TWiLIO_ACCOUNT_SID,
+    authToken: process.env.TWILIO_AUTH_TOKEN,
+    phoneNumber: process.env.TWILIO_PHOME_NUMBER,
+  },
   redis: {
     heathCheck: process.env.REDIS_HOST ? true : false,
     host: process.env.REDIS_HOST,
