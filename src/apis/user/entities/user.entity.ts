@@ -15,8 +15,11 @@ export class User {
   @Prop({ required: true, unique: true, type: String })
   email: string;
 
-  @Prop({ required: true, unique: true, type: String })
+  @Prop({ required: false, type: String })
   password: string;
+
+  @Prop({ required: true, type: String })
+  provider: 'google' | 'local';
 
   @Prop({
     type: Types.ObjectId,

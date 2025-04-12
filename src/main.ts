@@ -31,7 +31,6 @@ async function bootstrap() {
 
   app.useGlobalInterceptors(new TransformInterceptor());
   await app.listen(3000);
-  console.log(process.env.PORT);
 
   console.log(`🚀 Server running on: http://localhost:3000/docs`);
 }

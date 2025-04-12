@@ -5,7 +5,6 @@ import { UsersModule } from '../user/user.module';
 import { AuthService } from './auth.service';
 import { AuthController } from './controllers/auth.controller';
 import { JwtStrategy } from 'src/strategies/jwt-strategy';
-import { OTPService } from './twilio.service';
 
 @Module({
   imports: [
@@ -19,7 +18,7 @@ import { OTPService } from './twilio.service';
     }),
   ],
   controllers: [AuthController],
-  providers: [AuthService, OTPService, JwtStrategy],
+  providers: [AuthService, JwtStrategy],
   exports: [AuthService],
 })
 export class AuthModule {}
