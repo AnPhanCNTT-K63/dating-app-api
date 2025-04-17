@@ -2,6 +2,7 @@ import {
   BadRequestException,
   Injectable,
   NotFoundException,
+  UnauthorizedException,
 } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
@@ -12,6 +13,9 @@ import { appSettings } from 'src/configs/app-settings';
 import { UserPayload } from 'src/base/models/user-payload.model';
 import { Types } from 'mongoose';
 import { CheckPasswordDto } from './dto/check-password.dto';
+import { OAuth2Client } from 'google-auth-library';
+
+const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 @Injectable()
 export class AuthService {
@@ -46,6 +50,7 @@ export class AuthService {
         username,
         email,
         password: hashedPassword,
+        provider: 'local',
       });
     } catch (error) {
       throw new BadRequestException(error);
@@ -56,6 +61,12 @@ export class AuthService {
     const { email, password } = userLogin;
 
     const user = await this.userService.getOne({ email });
+
+    if (!user?.password) {
+      throw new BadRequestException(
+        'This email is linked with a Google sign-in. Please log in with Google or set a password in your account settings.',
+      );
+    }
 
     if (!user) {
       throw new BadRequestException('Invalid email or password');
@@ -74,6 +85,37 @@ export class AuthService {
     };
 
     const token = await this.getTokens(userPayload);
+    return token;
+  }
+
+  async handleGoogleLogin(idToken: string) {
+    const ticket = await client.verifyIdToken({
+      idToken,
+      audience: process.env.GOOGLE_CLIENT_ID,
+    });
+
+    const payload = ticket.getPayload();
+    if (!payload || !payload.email) {
+      throw new UnauthorizedException('Invalid Google token');
+    }
+
+    let user = await this.userService.getOne({ email: payload.email });
+
+    if (!user) {
+      user = await this.userService.creatOne({
+        email: payload.email,
+        username: payload.name || 'unknown',
+        password: '',
+        provider: 'google',
+      });
+    }
+
+    const token = await this.getTokens({
+      _id: new Types.ObjectId(user?._id),
+      email: payload?.email || 'unknown',
+      username: payload?.name || 'unknown',
+    });
+
     return token;
   }
 

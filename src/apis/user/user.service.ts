@@ -28,9 +28,12 @@ export class UserService {
   // Lấy 1 user theo filter
   async getOne(filter: FilterQuery<User>) {
     try {
-      return await this.userModel
+      const user = await this.userModel
         .findOne(filter)
-        .populate(this.getPopulateOptions());
+        .populate(this.getPopulateOptions())
+        .exec();
+
+      return user;
     } catch (error) {
       throw new BadRequestException(error);
     }
@@ -49,7 +52,7 @@ export class UserService {
       await newProfile.save();
       await newUser.save();
 
-      return { message: 'Create success' };
+      return newUser;
     } catch (error) {
       throw new BadRequestException(error);
     }

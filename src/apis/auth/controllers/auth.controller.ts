@@ -7,6 +7,7 @@ import { UserLoginDto } from '../dto/user-login.dto';
 import { UserPayload } from 'src/base/models/user-payload.model';
 import { UserRegisterDto } from '../dto/user-register.dto';
 import { Me } from 'src/decorators/me.decorator';
+import { GoogleLogin } from '../dto/google-login.dto';
 
 @Controller('auth')
 export class AuthController {
@@ -20,6 +21,11 @@ export class AuthController {
   @Post('signup')
   register(@Body() userRegister: UserRegisterDto) {
     return this.authService.register(userRegister);
+  }
+
+  @Post('google-login')
+  async googleLogin(@Body() body: GoogleLogin) {
+    return this.authService.handleGoogleLogin(body.token);
   }
 
   @ApiBearerAuth()

@@ -8,7 +8,7 @@
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "start": "nest start",
+    "start": "node --max-old-space-size=1024 dist/main.js",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
@@ -22,7 +22,7 @@
   "dependencies": {
     "@aws-sdk/client-s3": "^3.777.0",
     "@nestjs/axios": "^4.0.0",
-    "@nestjs/common": "^11.0.1",
+    "@nestjs/common": "^11.0.16",
     "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.0.1",
     "@nestjs/jwt": "^11.0.0",
@@ -35,12 +35,14 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
     "dayjs": "^1.11.13",
-    "mongoose": "^8.13.0",
+    "google-auth-library": "^9.15.1",
+    "mongoose": "^8.13.2",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
-    "swagger-ui-express": "^5.0.1"
+    "swagger-ui-express": "^5.0.1",
+    "twilio": "^5.5.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
