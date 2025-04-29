@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {
   Body,
   Controller,
@@ -97,4 +98,12 @@ export class ProfileController {
     };
     return this.profileService.addPhoto(multerFile, userPayload);
   }
+=======
+import { Controller } from '@nestjs/common';
+import { ProfileService } from '../profile.service';
+
+@Controller('profile')
+export class ProfileController {
+  constructor(private profileService: ProfileService) {}
+>>>>>>> b0aaa98696d35ce6a80ebb23c0c4806a1c24af82
 }
