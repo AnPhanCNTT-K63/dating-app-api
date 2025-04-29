@@ -6,7 +6,6 @@ import autopopulateSoftDelete from 'src/utils/mongoose-plugins/autopopulate-soft
 
 export type ProfileDocument = Profile & Document;
 
-<<<<<<< HEAD
 @Schema({ timestamps: true })
 export class Profile {
   // Basic Info
@@ -114,54 +113,9 @@ export class Profile {
 
   @Prop({ type: Boolean, default: true })
   showDistance: boolean;
-=======
-@Schema({})
-export class Profile {
-  @Prop({
-    type: String,
-    required: false,
-  })
-  firstName: string;
-
-  @Prop({
-    type: String,
-    required: false,
-  })
-  lastName: string;
-
-  @Prop({
-    type: String,
-    required: false,
-  })
-  phone: string;
-
-  @Prop({
-    type: Date,
-    required: false,
-  })
-  birthday: Date;
-
-  @Prop({
-    type: Types.ObjectId,
-    required: false,
-    ref: 'File',
-    refClass: File,
-  })
-  avatar: Types.ObjectId;
-
-  @Prop({
-    type: Types.ObjectId,
-    required: true,
-    ref: 'User',
-    refClass: User,
-  })
-  user: Types.ObjectId;
->>>>>>> b0aaa98696d35ce6a80ebb23c0c4806a1c24af82
 }
 
 export const ProfileSchema = SchemaFactory.createForClass(Profile);
 ProfileSchema.plugin(autopopulateSoftDelete);
-<<<<<<< HEAD
+
 ProfileSchema.index({ coordinates: '2dsphere' }); // For geospatial queries
-=======
->>>>>>> b0aaa98696d35ce6a80ebb23c0c4806a1c24af82

@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
-<<<<<<< HEAD
+
 import {
   IsArray,
   IsDate,
@@ -13,32 +13,15 @@ import {
 export class CreateProfileDto {
   // Basic Info
   @ApiProperty({ required: false })
-=======
-import { IsDate, IsOptional, IsString } from 'class-validator';
-
-export class CreateProfileDto {
-  @ApiProperty({
-    type: String,
-    required: false,
-  })
->>>>>>> b0aaa98696d35ce6a80ebb23c0c4806a1c24af82
   @IsOptional()
   @IsString()
   firstName: string;
 
-<<<<<<< HEAD
   @ApiProperty({ required: false })
-=======
-  @ApiProperty({
-    type: String,
-    required: false,
-  })
->>>>>>> b0aaa98696d35ce6a80ebb23c0c4806a1c24af82
   @IsOptional()
   @IsString()
   lastName: string;
 
-<<<<<<< HEAD
   @ApiProperty({ required: false })
   @IsOptional()
   @IsString()
@@ -46,25 +29,10 @@ export class CreateProfileDto {
 
   // Personal Details
   @ApiProperty({ required: false })
-=======
-  @ApiProperty({
-    type: String,
-    required: false,
-  })
-  @IsOptional()
-  @IsString()
-  phone: string;
-
-  @ApiProperty({
-    type: Date,
-    required: false,
-  })
->>>>>>> b0aaa98696d35ce6a80ebb23c0c4806a1c24af82
   @IsOptional()
   @IsDate()
   @Type(() => Date)
   birthday: Date;
-<<<<<<< HEAD
 
   @ApiProperty({ enum: ['male', 'female', 'other'], required: false })
   @IsOptional()
@@ -161,6 +129,4 @@ export class CreateProfileDto {
   @ApiProperty({ required: false, default: true })
   @IsOptional()
   showDistance: boolean;
-=======
->>>>>>> b0aaa98696d35ce6a80ebb23c0c4806a1c24af82
 }
