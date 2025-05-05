@@ -11,7 +11,7 @@ import { ProfileService } from '../profile.service';
 import { Me } from 'src/decorators/me.decorator';
 import { UserPayload } from 'src/base/models/user-payload.model';
 import { JwtAuthGuard } from 'src/guards/jwt-auth.guard';
-import { ApiBearerAuth, ApiConsumes, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiBody, ApiConsumes, ApiTags } from '@nestjs/swagger';
 import { CreateProfileDto } from '../dto/create-profile.dto';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { appSettings } from 'src/configs/app-settings';
@@ -40,6 +40,18 @@ export class ProfileController {
 
   @Post('upload-avatar')
   @ApiConsumes('multipart/form-data')
+  @ApiBody({
+    description: 'File upload endpoint',
+    schema: {
+      type: 'object',
+      properties: {
+        file: {
+          type: 'string',
+          format: 'binary',
+        },
+      },
+    },
+  })
   @UseInterceptors(
     FileInterceptor('file', {
       limits: {
@@ -55,25 +67,29 @@ export class ProfileController {
   )
   async uploadAvatar(
     @Me() userPayload: UserPayload,
-    @UploadedFile() file: Express.Multer.File,
+    @UploadedFile() file: IUploadedMulterFile,
   ) {
-    const multerFile: IUploadedMulterFile = {
-      fieldName: file.fieldname,
-      originalname: file.originalname,
-      encoding: file.encoding,
-      mimetype: file.mimetype,
-      buffer: file.buffer,
-      size: file.size,
-    };
-    return this.profileService.uploadAvatar(multerFile, userPayload);
+    return this.profileService.uploadAvatar(file, userPayload);
   }
 
   @Post('add-photo')
   @ApiConsumes('multipart/form-data')
+  @ApiBody({
+    description: 'File upload endpoint',
+    schema: {
+      type: 'object',
+      properties: {
+        file: {
+          type: 'string',
+          format: 'binary',
+        },
+      },
+    },
+  })
   @UseInterceptors(
     FileInterceptor('file', {
       limits: {
-        fileSize: 1024 * 1024 * appSettings.maxFileSize.front,
+        fileSize: 1024 * 1024 * appSettings.maxFileSize.admin,
       },
       fileFilter: (req, file, callback) => {
         if (!file.mimetype.match(/^image\/(jpeg|png|webp)$/)) {
@@ -85,16 +101,8 @@ export class ProfileController {
   )
   async addPhoto(
     @Me() userPayload: UserPayload,
-    @UploadedFile() file: Express.Multer.File,
+    @UploadedFile() file: IUploadedMulterFile,
   ) {
-    const multerFile: IUploadedMulterFile = {
-      fieldName: file.fieldname,
-      originalname: file.originalname,
-      encoding: file.encoding,
-      mimetype: file.mimetype,
-      buffer: file.buffer,
-      size: file.size,
-    };
-    return this.profileService.addPhoto(multerFile, userPayload);
+    return this.profileService.addPhoto(file, userPayload);
   }
 }

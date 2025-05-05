@@ -9,9 +9,6 @@ import { CreateProfileDto } from './dto/create-profile.dto';
 
 @Injectable()
 export class ProfileService {
-  updateOne(userPayload: UserPayload, profileDto: CreateProfileDto) {
-    throw new Error('Method not implemented.');
-  }
   constructor(
     @InjectModel(Profile.name)
     private readonly profileModel: Model<Profile>,
@@ -79,7 +76,7 @@ export class ProfileService {
         throw new BadRequestException('Profile not found');
       }
 
-      return updatedProfile;
+      return newAvatarFile;
     } catch (error) {
       throw new BadRequestException(error);
     }

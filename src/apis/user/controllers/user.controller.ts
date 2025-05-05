@@ -49,33 +49,6 @@ export class UserController {
     return this.usersService.getOne({ _id: new Types.ObjectId(id) });
   }
 
-  @Post('upload-avatar')
-  @ApiConsumes('multipart/form-data')
-  @ApiBody({
-    description: 'File upload endpoint',
-    schema: {
-      type: 'object',
-      properties: {
-        file: {
-          type: 'string',
-          format: 'binary',
-        },
-      },
-    },
-  })
-  @UseInterceptors(
-    FileInterceptor('file', {
-      limits: {
-        fileSize: 1024 * 1024 * appSettings.maxFileSize.admin,
-      },
-      fileFilter: (req, file, callback) => {
-        if (!file.mimetype.match(/^image\/(jpeg|png|webp)$/)) {
-          return callback(new Error('Only image files are allowed!'), false);
-        }
-        callback(null, true);
-      },
-    }),
-  )
   @Patch('update-account')
   async updateAccount(
     @Me() userPayload: UserPayload,
