@@ -18,6 +18,9 @@ export class User {
   @Prop({ required: false, type: String })
   password: string;
 
+  @Prop({ required: false, type: String })
+  fcmToken: string;
+
   @Prop({ required: true, type: String })
   provider: 'google' | 'local';
 

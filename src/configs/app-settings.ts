@@ -34,6 +34,11 @@ export const appSettings = {
     authToken: process.env.TWILIO_AUTH_TOKEN,
     phoneNumber: process.env.TWILIO_PHOME_NUMBER,
   },
+  firebase: {
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    key: process.env.FIREBASE_KEY,
+    clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+  },
   redis: {
     heathCheck: process.env.REDIS_HOST ? true : false,
     host: process.env.REDIS_HOST,

@@ -6,6 +6,9 @@ import { UsersModule } from './apis/user/user.module';
 import { appSettings } from './configs/app-settings';
 import { ProfileModule } from './apis/profile/profile.module';
 import { AccountModule } from './apis/account/account.module';
+import { MessageModule } from './apis/message/message.module';
+import { ConversationModule } from './apis/conversation/conversation.module';
+import { NotificationModule } from './apis/notification/notification.module';
 
 @Module({
   imports: [
@@ -21,6 +24,9 @@ import { AccountModule } from './apis/account/account.module';
     UsersModule,
     ProfileModule,
     AccountModule,
+    MessageModule,
+    ConversationModule,
+    NotificationModule,
   ],
   controllers: [],
   providers: [],
