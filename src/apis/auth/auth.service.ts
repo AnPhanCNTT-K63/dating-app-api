@@ -105,7 +105,7 @@ export class AuthService {
       user = await this.userService.creatOne({
         email: payload.email,
         username: payload.name || 'unknown',
-        password: '',
+        password: null,
         provider: 'google',
       });
     }

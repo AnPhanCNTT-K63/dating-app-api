@@ -15,8 +15,8 @@ export class User {
   @Prop({ required: true, unique: true, type: String })
   email: string;
 
-  @Prop({ required: false, type: String })
-  password: string;
+  @Prop({ required: false, type: String, default: null })
+  password: string | null;
 
   @Prop({ required: false, type: String })
   fcmToken: string;
