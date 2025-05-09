@@ -49,19 +49,19 @@ export class UserController {
     return this.usersService.getOne({ _id: new Types.ObjectId(id) });
   }
 
-  @Patch('update-account')
-  async updateAccount(
-    @Me() userPayload: UserPayload,
-    @Body() dto: UpdateAccountDto,
-  ) {
-    return this.usersService.updateAccount(userPayload, dto);
-  }
+  // @Patch('update-account')
+  // async updateAccount(
+  //   @Me() userPayload: UserPayload,
+  //   @Body() dto: UpdateAccountDto,
+  // ) {
+  //   return this.usersService.updateAccount(userPayload, dto);
+  // }
 
-  @Patch('/update-profile')
-  updateProfile(
-    @Me() userPayload: UserPayload,
-    @Body() profileDto: CreateProfileDto,
-  ) {
-    return this.profileService.updateProfile(userPayload, profileDto);
-  }
+  // @Patch('/update-profile')
+  // updateProfile(
+  //   @Me() userPayload: UserPayload,
+  //   @Body() profileDto: CreateProfileDto,
+  // ) {
+  //   return this.profileService.updateProfile(userPayload, profileDto);
+  // }
 }
