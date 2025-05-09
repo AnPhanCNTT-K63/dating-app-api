@@ -2,6 +2,7 @@ import {
   Body,
   Controller,
   Get,
+  Patch,
   Post,
   UploadedFile,
   UseGuards,
@@ -30,7 +31,7 @@ export class ProfileController {
     return this.profileService.getProfile(new Types.ObjectId(userPayload._id));
   }
 
-  @Post('update')
+  @Patch('update')
   async updateProfile(
     @Me() userPayload: UserPayload,
     @Body() profileDto: CreateProfileDto,

@@ -28,7 +28,7 @@ export const appSettings = {
     bucket: process.env.AWS_BUCKET_NAME,
     folder: process.env.AWS_FOLDER_NAME_DEFAULT || 'marketplace',
     region: process.env.AWS_REGION,
-    distribution: process.env.DISTRIBUTION_URL,
+    distribution: process.env.AWS_CLOUD_FRONT,
   },
   twilio: {
     accountSID: process.env.TWiLIO_ACCOUNT_SID,

@@ -22,10 +22,10 @@ export class Profile {
   @Prop({ type: Date, required: false })
   birthday: Date;
 
-  @Prop({ type: String, enum: ['male', 'female', 'other'], required: false })
+  @Prop({ type: String, enum: ['MAN', 'WOMAN', 'other'], required: false })
   gender: string;
 
-  @Prop({ type: String, enum: ['male', 'female', 'both'], required: false })
+  @Prop({ type: String, enum: ['MAN', 'WOMAN', 'both'], required: false })
   interestedIn: string;
 
   @Prop({ type: Number, min: 18, max: 100, required: false })

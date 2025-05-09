@@ -34,14 +34,12 @@ export class CreateProfileDto {
   @Type(() => Date)
   birthday: Date;
 
-  @ApiProperty({ enum: ['male', 'female', 'other'], required: false })
+  @ApiProperty({ required: false })
   @IsOptional()
-  @IsEnum(['male', 'female', 'other'])
   gender: string;
 
-  @ApiProperty({ enum: ['male', 'female', 'both'], required: false })
+  @ApiProperty({ required: false })
   @IsOptional()
-  @IsEnum(['male', 'female', 'both'])
   interestedIn: string;
 
   @ApiProperty({ required: false })
