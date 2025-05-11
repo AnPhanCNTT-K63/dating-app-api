@@ -40,6 +40,12 @@ export const appSettings = {
     key: process.env.FIREBASE_KEY,
     clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
   },
+  vnpay: {
+    tmnCode: process.env.VNP_TMNCODE,
+    hashSecret: process.env.VNP_HASH_SECRET,
+    url: process.env.VNP_URL,
+    returnUrl: process.env.VNP_RETURN_URL,
+  },
   redis: {
     heathCheck: process.env.REDIS_HOST ? true : false,
     host: process.env.REDIS_HOST,

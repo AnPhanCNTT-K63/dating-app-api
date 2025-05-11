@@ -9,6 +9,7 @@ import { AccountModule } from './apis/account/account.module';
 import { MessageModule } from './apis/message/message.module';
 import { ConversationModule } from './apis/conversation/conversation.module';
 import { NotificationModule } from './apis/notification/notification.module';
+import { PaymentModule } from './apis/payment/payment.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { NotificationModule } from './apis/notification/notification.module';
     MessageModule,
     ConversationModule,
     NotificationModule,
+    PaymentModule,
   ],
   controllers: [],
   providers: [],

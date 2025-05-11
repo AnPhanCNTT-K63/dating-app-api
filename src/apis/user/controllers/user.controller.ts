@@ -1,27 +1,12 @@
-import {
-  Body,
-  Controller,
-  Get,
-  Param,
-  Patch,
-  Post,
-  UploadedFile,
-  UseGuards,
-  UseInterceptors,
-} from '@nestjs/common';
+import { Controller, Get, Param, UseGuards } from '@nestjs/common';
 import { UserService } from '../user.service';
 import { Types } from 'mongoose';
 import { ParseObjectIdPipe } from 'src/pipes/parse-object-id.pipe';
 import { Me } from 'src/decorators/me.decorator';
 import { UserPayload } from 'src/base/models/user-payload.model';
 import { JwtAuthGuard } from 'src/guards/jwt-auth.guard';
-import { ApiBearerAuth, ApiBody, ApiConsumes } from '@nestjs/swagger';
-import { UpdateAccountDto } from '../dto/update-account.dto';
+import { ApiBearerAuth } from '@nestjs/swagger';
 import { ProfileService } from 'src/apis/profile/profile.service';
-import { CreateProfileDto } from 'src/apis/profile/dto/create-profile.dto';
-import { FileInterceptor } from '@nestjs/platform-express';
-import { appSettings } from 'src/configs/app-settings';
-import { IUploadedMulterFile } from 'src/packages/s3/s3.service';
 
 @ApiBearerAuth()
 @UseGuards(JwtAuthGuard)
