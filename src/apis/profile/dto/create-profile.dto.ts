@@ -1,38 +1,132 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
-import { IsDate, IsOptional, IsString } from 'class-validator';
+
+import {
+  IsArray,
+  IsDate,
+  IsEnum,
+  IsNumber,
+  IsOptional,
+  IsString,
+} from 'class-validator';
+import { Types } from 'mongoose';
 
 export class CreateProfileDto {
-  @ApiProperty({
-    type: String,
-    required: false,
-  })
+  // Basic Info
+  @ApiProperty({ required: false })
   @IsOptional()
   @IsString()
   firstName: string;
 
-  @ApiProperty({
-    type: String,
-    required: false,
-  })
+  @ApiProperty({ required: false })
   @IsOptional()
   @IsString()
   lastName: string;
 
-  @ApiProperty({
-    type: String,
-    required: false,
-  })
+  @ApiProperty({ required: false })
   @IsOptional()
   @IsString()
-  phone: string;
+  bio: string;
 
-  @ApiProperty({
-    type: Date,
-    required: false,
-  })
+  // Personal Details
+  @ApiProperty({ required: false })
   @IsOptional()
   @IsDate()
   @Type(() => Date)
   birthday: Date;
+
+  @ApiProperty({ required: false })
+  @IsOptional()
+  gender: string;
+
+  @ApiProperty({ required: false })
+  @IsOptional()
+  interestedIn: string;
+
+  @ApiProperty({ required: false })
+  @IsOptional()
+  @IsString()
+  jobTitle: string;
+
+  @ApiProperty({ required: false })
+  @IsOptional()
+  @IsString()
+  company: string;
+
+  @ApiProperty({ required: false })
+  @IsOptional()
+  @IsString()
+  education: string;
+
+  // Location
+  @ApiProperty({ required: false })
+  @IsOptional()
+  @IsString()
+  city: string;
+
+  @ApiProperty({ required: false })
+  @IsOptional()
+  @IsString()
+  country: string;
+
+  // Preferences
+  @ApiProperty({ required: false })
+  @IsOptional()
+  @IsNumber()
+  minAgePreference: number;
+
+  @ApiProperty({ required: false })
+  @IsOptional()
+  @IsNumber()
+  maxAgePreference: number;
+
+  @ApiProperty({ required: false })
+  @IsOptional()
+  @IsNumber()
+  maxDistance: number;
+
+  // Appearance
+  @ApiProperty({ required: false })
+  @IsOptional()
+  @IsNumber()
+  height: number;
+
+  @ApiProperty({
+    enum: ['slim', 'average', 'athletic', 'heavy'],
+    required: false,
+  })
+  @IsOptional()
+  @IsEnum(['slim', 'average', 'athletic', 'heavy'])
+  bodyType: string;
+
+  // Lifestyle
+  @ApiProperty({ enum: ['never', 'occasionally', 'often'], required: false })
+  @IsOptional()
+  @IsEnum(['never', 'occasionally', 'often'])
+  smoking: string;
+
+  @ApiProperty({ enum: ['never', 'occasionally', 'often'], required: false })
+  @IsOptional()
+  @IsEnum(['never', 'occasionally', 'often'])
+  drinking: string;
+
+  @ApiProperty({ type: [String], required: false })
+  @IsOptional()
+  @IsArray()
+  hobbies: string[];
+
+  @ApiProperty({ type: [String], required: false })
+  @IsOptional()
+  @IsArray()
+  @Type(() => Types.ObjectId)
+  interests: Types.ObjectId[];
+
+  // Settings
+  @ApiProperty({ required: false, default: true })
+  @IsOptional()
+  showAge: boolean;
+
+  @ApiProperty({ required: false, default: true })
+  @IsOptional()
+  showDistance: boolean;
 }

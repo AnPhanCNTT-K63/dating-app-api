@@ -6,6 +6,7 @@ import { UserPayload } from 'src/base/models/user-payload.model';
 import { IUploadedMulterFile } from 'src/packages/s3/s3.service';
 import { MediaService } from '../media/media.service';
 import { CreateProfileDto } from './dto/create-profile.dto';
+
 @Injectable()
 export class ProfileService {
   constructor(
@@ -14,19 +15,35 @@ export class ProfileService {
     private readonly mediaService: MediaService,
   ) {}
 
-  async updateOne(
+  async createEmptyProfile(userId: Types.ObjectId) {
+    return this.profileModel.create({ user: userId });
+  }
+
+  async getProfile(userId: Types.ObjectId) {
+    return this.profileModel
+      .findOne({ user: userId })
+      .populate('avatar photos interests');
+  }
+
+  async updateProfile(
     userPayload: UserPayload,
     profileDto: Partial<CreateProfileDto>,
   ) {
     try {
-      const updatedProfile = await this.profileModel.findOneAndUpdate(
-        { user: new Types.ObjectId(userPayload._id) },
-        { $set: profileDto },
-        { new: true },
-      );
-      if (!updatedProfile) throw new BadRequestException('Profile not found');
+      if (profileDto.birthday) {
+        const age = this.calculateAge(new Date(profileDto.birthday));
+        profileDto['age'] = age;
+      }
 
-      updatedProfile.save();
+      const updatedProfile = await this.profileModel
+        .findOneAndUpdate(
+          { user: new Types.ObjectId(userPayload._id) },
+          { $set: profileDto },
+          { new: true },
+        )
+        .populate('avatar photos');
+
+      if (!updatedProfile) throw new BadRequestException('Profile not found');
 
       return updatedProfile;
     } catch (error) {
@@ -36,7 +53,7 @@ export class ProfileService {
 
   async uploadAvatar(avatar: IUploadedMulterFile, user: UserPayload) {
     try {
-      if (!avatar) return new BadRequestException('Avatar null');
+      if (!avatar) throw new BadRequestException('Avatar file is required');
 
       const newAvatarFile = await this.mediaService.createFile(
         avatar,
@@ -46,23 +63,66 @@ export class ProfileService {
 
       if (newAvatarFile instanceof BadRequestException) throw newAvatarFile;
 
-      const existingProfile = await this.profileModel.findOne({
-        user: new Types.ObjectId(user._id),
-      });
+      const updatedProfile = await this.profileModel
+        .findOneAndUpdate(
+          { user: new Types.ObjectId(user._id) },
+          { $set: { avatar: newAvatarFile._id } },
+          { new: true },
+        )
+        .populate('avatar');
 
-      newAvatarFile.createdBy = user._id;
-
-      await newAvatarFile.save();
-
-      if (!existingProfile) {
+      if (!updatedProfile) {
         throw new BadRequestException('Profile not found');
       }
 
-      existingProfile.avatar = newAvatarFile._id;
-
-      await existingProfile.save();
+      return newAvatarFile;
     } catch (error) {
       throw new BadRequestException(error);
     }
+  }
+
+  async addPhoto(photo: IUploadedMulterFile, user: UserPayload) {
+    try {
+      if (!photo) throw new BadRequestException('Photo file is required');
+
+      const newPhoto = await this.mediaService.createFile(
+        photo,
+        user,
+        'profile-photos',
+      );
+
+      if (newPhoto instanceof BadRequestException) throw newPhoto;
+
+      const updatedProfile = await this.profileModel
+        .findOneAndUpdate(
+          { user: new Types.ObjectId(user._id) },
+          { $push: { photos: newPhoto._id } },
+          { new: true },
+        )
+        .populate('photos');
+
+      if (!updatedProfile) {
+        throw new BadRequestException('Profile not found');
+      }
+
+      return updatedProfile;
+    } catch (error) {
+      throw new BadRequestException(error);
+    }
+  }
+
+  private calculateAge(birthday: Date): number {
+    const today = new Date();
+    let age = today.getFullYear() - birthday.getFullYear();
+    const monthDiff = today.getMonth() - birthday.getMonth();
+
+    if (
+      monthDiff < 0 ||
+      (monthDiff === 0 && today.getDate() < birthday.getDate())
+    ) {
+      age--;
+    }
+
+    return age;
   }
 }

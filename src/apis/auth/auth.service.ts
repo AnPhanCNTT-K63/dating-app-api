@@ -14,6 +14,7 @@ import { UserPayload } from 'src/base/models/user-payload.model';
 import { Types } from 'mongoose';
 import { CheckPasswordDto } from './dto/check-password.dto';
 import { OAuth2Client } from 'google-auth-library';
+import { v4 as uuidv4 } from 'uuid';
 
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
@@ -102,10 +103,13 @@ export class AuthService {
     let user = await this.userService.getOne({ email: payload.email });
 
     if (!user) {
+      // Generate a random password (e.g., using UUID or any method you prefer)
+      const randomPassword = uuidv4(); // Generates a random password using UUID
+
       user = await this.userService.creatOne({
         email: payload.email,
         username: payload.name || 'unknown',
-        password: '',
+        password: randomPassword, // Store the random password
         provider: 'google',
       });
     }

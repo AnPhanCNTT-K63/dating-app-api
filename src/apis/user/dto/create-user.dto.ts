@@ -35,8 +35,9 @@ export class CreateUserDto {
   @ApiProperty({
     type: String,
     required: false,
+    nullable: true,
   })
   @IsOptional()
   @IsString()
-  password: string;
+  password: string | null;
 }
