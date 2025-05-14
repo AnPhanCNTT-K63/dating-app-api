@@ -9,6 +9,7 @@ import {
   IsOptional,
   IsString,
 } from 'class-validator';
+import { Types } from 'mongoose';
 
 export class CreateProfileDto {
   // Basic Info
@@ -117,7 +118,8 @@ export class CreateProfileDto {
   @ApiProperty({ type: [String], required: false })
   @IsOptional()
   @IsArray()
-  interests: string[];
+  @Type(() => Types.ObjectId)
+  interests: Types.ObjectId[];
 
   // Settings
   @ApiProperty({ required: false, default: true })

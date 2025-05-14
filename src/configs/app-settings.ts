@@ -53,4 +53,7 @@ export const appSettings = {
     username: process.env.REDIS_USERNAME,
     password: process.env.REDIS_PASSWORD,
   },
+  microserviceAPI: {
+    audioProcessing: process.env.AUDIO_PROCESSING_API,
+  },
 };

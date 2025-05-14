@@ -22,7 +22,7 @@ export class ProfileService {
   async getProfile(userId: Types.ObjectId) {
     return this.profileModel
       .findOne({ user: userId })
-      .populate('avatar photos');
+      .populate('avatar photos interests');
   }
 
   async updateProfile(
@@ -30,7 +30,6 @@ export class ProfileService {
     profileDto: Partial<CreateProfileDto>,
   ) {
     try {
-      // Calculate age if birthday is provided
       if (profileDto.birthday) {
         const age = this.calculateAge(new Date(profileDto.birthday));
         profileDto['age'] = age;

@@ -10,6 +10,10 @@ import { MessageModule } from './apis/message/message.module';
 import { ConversationModule } from './apis/conversation/conversation.module';
 import { NotificationModule } from './apis/notification/notification.module';
 import { PaymentModule } from './apis/payment/payment.module';
+import { AudioModule } from './apis/audio/audio.module';
+import { CategoryModule } from './apis/category/category.module';
+import { SeedsModule } from './packages/seeds/seeds.module';
+import { InterestModule } from './apis/interest/interest.module';
 
 @Module({
   imports: [
@@ -21,6 +25,7 @@ import { PaymentModule } from './apis/payment/payment.module';
         uri: appSettings.mongoose.uri,
       }),
     }),
+    SeedsModule,
     AuthModule,
     UsersModule,
     ProfileModule,
@@ -29,6 +34,9 @@ import { PaymentModule } from './apis/payment/payment.module';
     ConversationModule,
     NotificationModule,
     PaymentModule,
+    AudioModule,
+    CategoryModule,
+    InterestModule,
   ],
   controllers: [],
   providers: [],

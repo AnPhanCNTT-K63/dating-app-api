@@ -1,7 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Types } from 'mongoose';
-import { File } from 'src/apis/media/entities/file.entity';
-import { User } from 'src/apis/user/entities/user.entity';
+
 import autopopulateSoftDelete from 'src/utils/mongoose-plugins/autopopulate-soft-delete';
 
 export type ProfileDocument = Profile & Document;
@@ -22,10 +21,10 @@ export class Profile {
   @Prop({ type: Date, required: false })
   birthday: Date;
 
-  @Prop({ type: String, enum: ['MAN', 'WOMAN', 'other'], required: false })
+  @Prop({ type: String, enum: ['MAN', 'WOMAN', 'OTHER'], required: false })
   gender: string;
 
-  @Prop({ type: String, enum: ['MAN', 'WOMAN', 'both'], required: false })
+  @Prop({ type: String, enum: ['MAN', 'WOMAN', 'OTHER'], required: false })
   interestedIn: string;
 
   @Prop({ type: Number, min: 18, max: 100, required: false })
@@ -89,20 +88,6 @@ export class Profile {
   @Prop({ type: [String], required: false })
   hobbies: string[];
 
-  @Prop({ type: [String], required: false })
-  interests: string[];
-
-  // Photos
-  @Prop({ type: Types.ObjectId, ref: 'File', required: false })
-  avatar: Types.ObjectId;
-
-  @Prop({ type: [{ type: Types.ObjectId, ref: 'File' }], required: false })
-  photos: Types.ObjectId[];
-
-  // Relationship
-  @Prop({ type: Types.ObjectId, ref: 'User', required: true })
-  user: Types.ObjectId;
-
   // Verification
   @Prop({ type: Boolean, default: false })
   isVerified: boolean;
@@ -113,9 +98,21 @@ export class Profile {
 
   @Prop({ type: Boolean, default: true })
   showDistance: boolean;
+
+  @Prop({ type: [{ type: Types.ObjectId, ref: 'Interest' }], required: false })
+  interests: Types.ObjectId[];
+
+  @Prop({ type: Types.ObjectId, ref: 'File', required: false })
+  avatar: Types.ObjectId;
+
+  @Prop({ type: [{ type: Types.ObjectId, ref: 'File' }], required: false })
+  photos: Types.ObjectId[];
+
+  @Prop({ type: Types.ObjectId, ref: 'User', required: true })
+  user: Types.ObjectId;
 }
 
 export const ProfileSchema = SchemaFactory.createForClass(Profile);
 ProfileSchema.plugin(autopopulateSoftDelete);
 
-ProfileSchema.index({ coordinates: '2dsphere' }); // For geospatial queries
+ProfileSchema.index({ coordinates: '2dsphere' });

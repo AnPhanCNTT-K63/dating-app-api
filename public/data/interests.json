@@ -1,0 +1,606 @@
+[
+  {
+    "_id": { "$oid": "681000000000000000000001" },
+    "name": { "en": "Badminton", "vi": "Cầu lông" },
+    "category": "681dca4d0000000000000001"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000002" },
+    "name": { "en": "Football (Soccer)", "vi": "Bóng đá" },
+    "category": "681dca4d0000000000000001"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000003" },
+    "name": { "en": "Basketball", "vi": "Bóng rổ" },
+    "category": "681dca4d0000000000000001"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000004" },
+    "name": { "en": "Running / Jogging", "vi": "Chạy bộ" },
+    "category": "681dca4d0000000000000001"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000005" },
+    "name": { "en": "Swimming", "vi": "Bơi lội" },
+    "category": "681dca4d0000000000000001"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000006" },
+    "name": { "en": "Gym/Weightlifting", "vi": "Tập gym/Cử tạ" },
+    "category": "681dca4d0000000000000001"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000007" },
+    "name": { "en": "Yoga", "vi": "Yoga" },
+    "category": "681dca4d0000000000000001"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000008" },
+    "name": { "en": "Cycling", "vi": "Đạp xe" },
+    "category": "681dca4d0000000000000001"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000009" },
+    "name": { "en": "Martial Arts", "vi": "Võ thuật" },
+    "category": "681dca4d0000000000000001"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000010" },
+    "name": { "en": "Tennis", "vi": "Quần vợt" },
+    "category": "681dca4d0000000000000001"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000011" },
+    "name": { "en": "Baking", "vi": "Làm bánh" },
+    "category": "681dca4d0000000000000002"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000012" },
+    "name": { "en": "Coffee tasting", "vi": "Thưởng thức cà phê" },
+    "category": "681dca4d0000000000000002"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000013" },
+    "name": { "en": "Wine tasting", "vi": "Thưởng thức rượu vang" },
+    "category": "681dca4d0000000000000002"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000014" },
+    "name": { "en": "Trying new cuisines", "vi": "Thử các món ẩm thực mới" },
+    "category": "681dca4d0000000000000002"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000015" },
+    "name": { "en": "Vegan/Vegetarian cooking", "vi": "Nấu ăn chay" },
+    "category": "681dca4d0000000000000002"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000016" },
+    "name": { "en": "Street food exploring", "vi": "Khám phá đồ ăn đường phố" },
+    "category": "681dca4d0000000000000002"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000017" },
+    "name": { "en": "Home cooking", "vi": "Nấu ăn tại nhà" },
+    "category": "681dca4d0000000000000002"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000018" },
+    "name": { "en": "Food photography", "vi": "Chụp ảnh đồ ăn" },
+    "category": "681dca4d0000000000000002"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000019" },
+    "name": { "en": "Barbecue/Grilling", "vi": "Nướng BBQ" },
+    "category": "681dca4d0000000000000002"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000020" },
+    "name": { "en": "Craft beer tasting", "vi": "Thưởng thức bia thủ công" },
+    "category": "681dca4d0000000000000002"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000021" },
+    "name": { "en": "Backpacking", "vi": "Du lịch ba lô" },
+    "category": "681dca4d0000000000000003"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000022" },
+    "name": { "en": "Road trips", "vi": "Du lịch đường bộ" },
+    "category": "681dca4d0000000000000003"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000023" },
+    "name": { "en": "Beach holidays", "vi": "Nghỉ dưỡng biển" },
+    "category": "681dca4d0000000000000003"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000024" },
+    "name": { "en": "Cultural exploration", "vi": "Khám phá văn hóa" },
+    "category": "681dca4d0000000000000003"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000025" },
+    "name": { "en": "Mountain hiking", "vi": "Leo núi" },
+    "category": "681dca4d0000000000000003"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000026" },
+    "name": { "en": "Camping", "vi": "Cắm trại" },
+    "category": "681dca4d0000000000000003"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000027" },
+    "name": {
+      "en": "Scuba diving/snorkeling",
+      "vi": "Lặn biển/lặn với ống thở"
+    },
+    "category": "681dca4d0000000000000003"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000028" },
+    "name": { "en": "Solo travel", "vi": "Du lịch một mình" },
+    "category": "681dca4d0000000000000003"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000029" },
+    "name": { "en": "Cruise trips", "vi": "Du lịch tàu biển" },
+    "category": "681dca4d0000000000000003"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000030" },
+    "name": {
+      "en": "Historical site visits",
+      "vi": "Tham quan di tích lịch sử"
+    },
+    "category": "681dca4d0000000000000003"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000031" },
+    "name": { "en": "Playing guitar/piano", "vi": "Chơi đàn guitar/piano" },
+    "category": "681dca4d0000000000000004"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000032" },
+    "name": { "en": "Singing", "vi": "Ca hát" },
+    "category": "681dca4d0000000000000004"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000033" },
+    "name": { "en": "Music production", "vi": "Sản xuất âm nhạc" },
+    "category": "681dca4d0000000000000004"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000034" },
+    "name": { "en": "Attending concerts", "vi": "Tham dự hòa nhạc" },
+    "category": "681dca4d0000000000000004"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000035" },
+    "name": { "en": "DJing", "vi": "DJ" },
+    "category": "681dca4d0000000000000004"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000036" },
+    "name": { "en": "Collecting vinyl records", "vi": "Sưu tầm đĩa than" },
+    "category": "681dca4d0000000000000004"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000037" },
+    "name": { "en": "Songwriting", "vi": "Sáng tác nhạc" },
+    "category": "681dca4d0000000000000004"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000038" },
+    "name": { "en": "K-Pop fandom", "vi": "Hâm mộ K-Pop" },
+    "category": "681dca4d0000000000000004"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000039" },
+    "name": {
+      "en": "Classical music appreciation",
+      "vi": "Thưởng thức nhạc cổ điển"
+    },
+    "category": "681dca4d0000000000000004"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000040" },
+    "name": { "en": "Electronic music festivals", "vi": "Lễ hội nhạc điện tử" },
+    "category": "681dca4d0000000000000004"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000041" },
+    "name": { "en": "Watching documentaries", "vi": "Xem phim tài liệu" },
+    "category": "681dca4d0000000000000005"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000042" },
+    "name": { "en": "Anime", "vi": "Anime" },
+    "category": "681dca4d0000000000000005"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000043" },
+    "name": { "en": "Film critique", "vi": "Phê bình phim" },
+    "category": "681dca4d0000000000000005"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000044" },
+    "name": { "en": "Binge-watching series", "vi": "Xem phim liên tục" },
+    "category": "681dca4d0000000000000005"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000045" },
+    "name": { "en": "Horror movie fan", "vi": "Yêu thích phim kinh dị" },
+    "category": "681dca4d0000000000000005"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000046" },
+    "name": { "en": "Superhero movies", "vi": "Phim siêu anh hùng" },
+    "category": "681dca4d0000000000000005"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000047" },
+    "name": { "en": "Drama series", "vi": "Phim truyền hình chính kịch" },
+    "category": "681dca4d0000000000000005"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000048" },
+    "name": { "en": "Romantic comedies", "vi": "Phim hài lãng mạn" },
+    "category": "681dca4d0000000000000005"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000049" },
+    "name": { "en": "Classic films", "vi": "Phim cổ điển" },
+    "category": "681dca4d0000000000000005"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000050" },
+    "name": { "en": "Indie films", "vi": "Phim độc lập" },
+    "category": "681dca4d0000000000000005"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000051" },
+    "name": { "en": "Hiking", "vi": "Đi bộ đường dài" },
+    "category": "681dca4d0000000000000006"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000052" },
+    "name": { "en": "Bird watching", "vi": "Quan sát chim" },
+    "category": "681dca4d0000000000000006"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000053" },
+    "name": { "en": "Camping", "vi": "Cắm trại" },
+    "category": "681dca4d0000000000000006"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000054" },
+    "name": { "en": "Nature photography", "vi": "Chụp ảnh thiên nhiên" },
+    "category": "681dca4d0000000000000006"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000055" },
+    "name": { "en": "Kayaking", "vi": "Chèo thuyền kayak" },
+    "category": "681dca4d0000000000000006"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000056" },
+    "name": { "en": "Rock climbing", "vi": "Leo núi đá" },
+    "category": "681dca4d0000000000000006"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000057" },
+    "name": { "en": "Stargazing", "vi": "Ngắm sao" },
+    "category": "681dca4d0000000000000006"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000058" },
+    "name": { "en": "Gardening", "vi": "Làm vườn" },
+    "category": "681dca4d0000000000000006"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000059" },
+    "name": { "en": "Trail running", "vi": "Chạy địa hình" },
+    "category": "681dca4d0000000000000006"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000060" },
+    "name": {
+      "en": "Nature conservation volunteering",
+      "vi": "Tình nguyện bảo tồn thiên nhiên"
+    },
+    "category": "681dca4d0000000000000006"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000061" },
+    "name": { "en": "Dog training", "vi": "Huấn luyện chó" },
+    "category": "681dca4d0000000000000007"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000062" },
+    "name": { "en": "Cat lover", "vi": "Yêu thích mèo" },
+    "category": "681dca4d0000000000000007"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000063" },
+    "name": { "en": "Pet adoption/rescue", "vi": "Nhận nuôi/cứu hộ thú cưng" },
+    "category": "681dca4d0000000000000007"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000064" },
+    "name": { "en": "Aquarium keeping", "vi": "Nuôi cá cảnh" },
+    "category": "681dca4d0000000000000007"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000065" },
+    "name": { "en": "Horse riding", "vi": "Cưỡi ngựa" },
+    "category": "681dca4d0000000000000007"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000066" },
+    "name": { "en": "Animal photography", "vi": "Chụp ảnh động vật" },
+    "category": "681dca4d0000000000000007"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000067" },
+    "name": { "en": "Exotic pet care", "vi": "Chăm sóc thú cưng kỳ lạ" },
+    "category": "681dca4d0000000000000007"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000068" },
+    "name": { "en": "Pet grooming", "vi": "Chăm sóc lông thú cưng" },
+    "category": "681dca4d0000000000000007"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000069" },
+    "name": {
+      "en": "Volunteering at shelters",
+      "vi": "Tình nguyện tại trại cứu hộ"
+    },
+    "category": "681dca4d0000000000000007"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000070" },
+    "name": {
+      "en": "Animal rights advocacy",
+      "vi": "Vận động quyền lợi động vật"
+    },
+    "category": "681dca4d0000000000000007"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000071" },
+    "name": { "en": "Painting", "vi": "Hội họa" },
+    "category": "681dca4d0000000000000008"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000072" },
+    "name": { "en": "Museum visits", "vi": "Tham quan bảo tàng" },
+    "category": "681dca4d0000000000000008"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000073" },
+    "name": { "en": "Sculpting", "vi": "Điêu khắc" },
+    "category": "681dca4d0000000000000008"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000074" },
+    "name": { "en": "Art exhibitions", "vi": "Triển lãm nghệ thuật" },
+    "category": "681dca4d0000000000000008"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000075" },
+    "name": { "en": "Theater/Drama", "vi": "Kịch nghệ" },
+    "category": "681dca4d0000000000000008"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000076" },
+    "name": { "en": "Dance", "vi": "Khiêu vũ" },
+    "category": "681dca4d0000000000000008"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000077" },
+    "name": { "en": "Calligraphy", "vi": "Thư pháp" },
+    "category": "681dca4d0000000000000008"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000078" },
+    "name": { "en": "Fashion design", "vi": "Thiết kế thời trang" },
+    "category": "681dca4d0000000000000008"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000079" },
+    "name": {
+      "en": "Street art appreciation",
+      "vi": "Đánh giá nghệ thuật đường phố"
+    },
+    "category": "681dca4d0000000000000008"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000080" },
+    "name": { "en": "Handicrafts", "vi": "Thủ công mỹ nghệ" },
+    "category": "681dca4d0000000000000008"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000081" },
+    "name": { "en": "Novels (fiction)", "vi": "Tiểu thuyết" },
+    "category": "681dca4d0000000000000009"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000082" },
+    "name": { "en": "Biographies", "vi": "Tiểu sử" },
+    "category": "681dca4d0000000000000009"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000083" },
+    "name": { "en": "Science fiction", "vi": "Khoa học viễn tưởng" },
+    "category": "681dca4d0000000000000009"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000084" },
+    "name": { "en": "Fantasy books", "vi": "Sách giả tưởng" },
+    "category": "681dca4d0000000000000009"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000085" },
+    "name": { "en": "Poetry", "vi": "Thơ ca" },
+    "category": "681dca4d0000000000000009"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000086" },
+    "name": { "en": "Self-help books", "vi": "Sách tự lực" },
+    "category": "681dca4d0000000000000009"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000087" },
+    "name": { "en": "Manga", "vi": "Truyện tranh Nhật Bản" },
+    "category": "681dca4d0000000000000009"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000088" },
+    "name": { "en": "Historical literature", "vi": "Văn học lịch sử" },
+    "category": "681dca4d0000000000000009"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000089" },
+    "name": {
+      "en": "Book club participation",
+      "vi": "Tham gia câu lạc bộ sách"
+    },
+    "category": "681dca4d0000000000000009"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000090" },
+    "name": { "en": "Writing and publishing", "vi": "Viết và xuất bản" },
+    "category": "681dca4d0000000000000009"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000091" },
+    "name": { "en": "Video gaming", "vi": "Chơi game video" },
+    "category": "681dca4d000000000000000a"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000092" },
+    "name": { "en": "Mobile gaming", "vi": "Chơi game di động" },
+    "category": "681dca4d000000000000000a"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000093" },
+    "name": { "en": "Game development", "vi": "Phát triển game" },
+    "category": "681dca4d000000000000000a"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000094" },
+    "name": { "en": "Esports watching", "vi": "Xem thi đấu Esports" },
+    "category": "681dca4d000000000000000a"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000095" },
+    "name": { "en": "Coding/programming", "vi": "Lập trình" },
+    "category": "681dca4d000000000000000a"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000096" },
+    "name": {
+      "en": "Tech gadgets reviewing",
+      "vi": "Đánh giá thiết bị công nghệ"
+    },
+    "category": "681dca4d000000000000000a"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000097" },
+    "name": { "en": "Virtual Reality (VR)", "vi": "Thực tế ảo (VR)" },
+    "category": "681dca4d000000000000000a"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000098" },
+    "name": { "en": "Building custom PCs", "vi": "Lắp ráp máy tính tùy chỉnh" },
+    "category": "681dca4d000000000000000a"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000099" },
+    "name": { "en": "Cybersecurity", "vi": "An ninh mạng" },
+    "category": "681dca4d000000000000000a"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000100" },
+    "name": { "en": "AI and Machine Learning", "vi": "AI và Học máy" },
+    "category": "681dca4d000000000000000a"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000101" },
+    "name": { "en": "Kind and empathetic", "vi": "Tốt bụng và đồng cảm" },
+    "category": "681dca4d000000000000000b"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000102" },
+    "name": {
+      "en": "Honest and trustworthy",
+      "vi": "Trung thực và đáng tin cậy"
+    },
+    "category": "681dca4d000000000000000b"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000103" },
+    "name": {
+      "en": "Funny and humorous",
+      "vi": "Hài hước và vui tính"
+    },
+    "category": "681dca4d000000000000000b"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000104" },
+    "name": {
+      "en": "Responsible and reliable",
+      "vi": "Có trách nhiệm và đáng tin cậy"
+    },
+    "category": "681dca4d000000000000000b"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000105" },
+    "name": {
+      "en": "Adventurous and curious",
+      "vi": "Thích phiêu lưu và tò mò"
+    },
+    "category": "681dca4d000000000000000b"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000106" },
+    "name": {
+      "en": "Calm and patient",
+      "vi": "Điềm tĩnh và kiên nhẫn"
+    },
+    "category": "681dca4d000000000000000b"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000107" },
+    "name": {
+      "en": "Friendly and sociable",
+      "vi": "Thân thiện và hòa đồng"
+    },
+    "category": "681dca4d000000000000000b"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000108" },
+    "name": {
+      "en": "Ambitious and goal-oriented",
+      "vi": "Tham vọng và có định hướng mục tiêu"
+    },
+    "category": "681dca4d000000000000000b"
+  },
+  {
+    "_id": { "$oid": "681000000000000000000109" },
+    "name": {
+      "en": "Independent and confident",
+      "vi": "Độc lập và tự tin"
+    },
+    "category": "681dca4d000000000000000b"
+  },
+  {
+    "_id": { "$oid": "68100000000000000000010a" },
+    "name": {
+      "en": "Creative and imaginative",
+      "vi": "Sáng tạo và giàu trí tưởng tượng"
+    },
+    "category": "681dca4d000000000000000b"
+  }
+]
